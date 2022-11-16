@@ -6,26 +6,28 @@ public class Player {
 
     private ArrayList<Card> hand;
     private String name;
+    private int money;
 
-    public Player(String name) {
+    public Player(String name, int money) {
         this.hand = new ArrayList<Card>();
         this.name = name;
+        this.money = money;
     }
 
     public ArrayList<Card> getHand() {
         return this.hand;
     }
 
-    public void hit(Card card) {
-        this.hand.add(card);
+    public String getName() {
+        return this.name;
     }
 
-    public void printHand() {
-        System.out.print(name + " has: ");
-        for (Card card : this.hand) {
-            card.printCard();
-            System.out.print(" ");
-        }
+    public int getMoney() {
+        return this.money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
     }
 
 }

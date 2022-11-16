@@ -18,18 +18,4 @@ public class Card {
         return this.suit;
     }
 
-    public void printCard() {
-        if (value == 1) {
-            System.out.print("A" + suit);
-        } else if (value == 11) {
-            System.out.print("J" + suit);
-        } else if (value == 12) {
-            System.out.print("Q" + suit);
-        } else if (value == 13) {
-            System.out.print("K" + suit);
-        } else {
-            System.out.print(value + suit);
-        }
-    }
-
 }
