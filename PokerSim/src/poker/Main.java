@@ -5,34 +5,47 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Deck deck = new Deck();
-        deck.shuffle();
+        while (true) {
 
-        int input;
+            Deck deck = new Deck();
+            deck.shuffle();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number of opponents: ");
-        input = scanner.nextInt();
+            int input;
+            String playAgain;
 
-        Table table = new Table(input, deck);
-        Hand myHand = new Hand();
-        table.addPlayer(myHand);
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("\n\nAlways press enter to continue...");
+            System.out.print("\n\nEnter number of opponents: ");
+            input = scanner.nextInt();
 
-        table.dealToPlayers();
-        table.showHands();
-        System.in.read();
-        System.out.flush();
-        deck.flop(table.board);
-        table.board.showBoard();
-        myHand.evaluate(table.board);
-        System.in.read();
-        System.out.flush();
-        deck.turn(table.board);
-        table.board.showBoard();
-        System.in.read();
-        System.out.flush();
-        deck.river(table.board);
-        table.board.showBoard();
-        System.in.read();
+            Table table = new Table(input, deck);
+            Hand myHand = new Hand();
+            table.addPlayer(myHand);
+
+            table.dealToPlayers();
+            table.showHands();
+            System.in.read();
+            System.out.flush();
+
+            deck.flop(table.board);
+            table.board.showBoard();
+            //myHand.evaluate(table.board);
+            System.in.read();
+            System.out.flush();
+
+            deck.turn(table.board);
+            table.board.showBoard();
+            System.in.read();
+            System.out.flush();
+
+            deck.river(table.board);
+            table.board.showBoard();
+            System.in.read();
+
+            System.out.println("Enter '1' to play again, or enter any other key to quit: ");
+            playAgain = scanner.next();
+            if (!playAgain.toString().equals("1"))
+                break;
+        }
     }
 }
