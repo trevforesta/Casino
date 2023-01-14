@@ -1,50 +1,7 @@
 import random
 import time
-
-class Card:
-
-    def __init__(self, value, suit):
-        self.value = value
-        self.suit = suit
-
-    def printCard(self):
-        if self.value == 1:
-            print("A", self.suit, sep="", end=" ")
-        elif self.value == 13:
-            print("K", self.suit, sep="", end=" ")
-        elif self.value == 12:
-            print("Q", self.suit, sep="", end=" ")
-        elif self.value == 11:
-            print("J", self.suit, sep="", end=" ")
-        else:
-            print(self.value, self.suit, sep="", end=" ")
-
-class Player:
-
-    def __init__(self, name, money):
-        self.name = name
-        self.hand = []
-        self.money = money
-        self.bet = 0
-
-    def setHand(self, hand):
-        self.hand = hand
-
-    def printHand(self):
-        print(self.name, ": [", sep="", end=" ")
-        for card in self.hand:
-            card.printCard()
-        print("]", end="")
-
-    def placeBet(self, bet):
-        self.bet = bet
-        self.money -= bet
-
-    def addMoney(self, money):
-        self.money += money
-
-    def printPlayerInfo(self):
-        print(self.name, " ($", self.money, ")", sep="")
+import Player
+import Card
 
 class Blackjack:
 
