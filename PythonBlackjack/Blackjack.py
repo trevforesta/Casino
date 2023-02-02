@@ -152,7 +152,7 @@ class Blackjack:
     def playerTurn(self, player):
         while True:
             playerAction = input(player.name + " take your action: ")
-            if playerAction is "H":
+            if playerAction == "H":
                 self.dealPlayerCard(player)
                 player.printHand()
                 print()
@@ -161,7 +161,7 @@ class Blackjack:
                     player.bet = 0
                     return
                 break
-            elif playerAction is "S":
+            elif playerAction == "S":
                 return
             else:
                 print("That is not proper input!")
